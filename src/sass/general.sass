@@ -1,0 +1,28 @@
+body, html, *
+	font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+/* Main */
+body
+	@apply w-full min-h-screen flex text-center min-h-screen	
+	> aside
+		@apply w-full bg-blue-900 p-4 text-center min-h-full 
+	> main
+		@apply w-full bg-blue-800 p-4 text-center min-h-full
+	h1
+		@apply font-bold
+
+@screen md 
+	body
+		> aside
+			@apply w-1/6
+			ul 
+				@apply pl-2 text-left pt-4
+				li
+					&::before
+						content: "•"
+						@apply pr-2
+		> main
+			@apply w-5/6
+		h2
+			@apply text-left font-bold text-2xl
+		a
+			@apply cursor-pointer font-semibold underline

@@ -1,0 +1,12 @@
+{ 
+"chart": [
+		{
+			"artist": "Venom",
+			"Album" : "Welcome to hell",
+			"year": 1981,
+			"genre" : "Speed Metal",
+			"youtube" : "link.com"
+
+		}
+	]
+}

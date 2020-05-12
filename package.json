@@ -1,0 +1,30 @@
+{
+  "name": "1111_chart",
+  "version": "1.0.0",
+  "description": "Interactive chart for the 1111 albums",
+  "main": "index.js",
+  "author": "Jelly",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel src/index.pug ",
+    "build": "parcel build src/index.pug -d public/ --public-url ./"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "postcss-modules": "^2.0.0",
+    "pug": "^2.0.4",
+    "sass": "^1.26.5",
+    "sass-node": "^4.11.2",
+    "svelte": "^3.22.2",
+    "svelte-preprocess": "^3.7.4",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-svelte": "^4.0.6",
+    "tailwindcss": "^1.4.4"
+  },
+  "browserslist": [
+    "last 1 chrome versions"
+  ]
+}
