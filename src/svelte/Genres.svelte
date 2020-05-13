@@ -1,16 +1,6 @@
 <script lang="typescript">
 import { data, genres } from '../data'
 let arr = Object.values(data)
-let open = false
-
-// document.body.addEventListener("click", () => open = false)
-
-const expand = function(x) {
-  x.target.parentNode.classList.add("expanded")
-  console.log(x.target.parentNode.classList)
-  open = true
-}
-
 </script>
 
 <template type="pug">
@@ -21,7 +11,7 @@ div.my-8#genres
       hr.mb-2
       div.text-left
         +each('data.rock as album')
-          article(class="{!open ? 'tagged' : ''}" on:click="{expand}")
+          article
               b {album.album}
               p {album.artist}
               i.subgenre {album.subgenre}
@@ -49,12 +39,13 @@ div.my-8#genres
           height: 100%
         img
           width: 100%
-          height: 90%
+          height: 70%
           cursor: pointer
         figure
           display: none
         &:hover
-          transform: scale(1.5)
+          padding: 1rem
+          transform: scale(1.3)
           background-color: hsla(0, 100%, 70%, 0.8)
           img
           .subgenre
