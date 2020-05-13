@@ -16,7 +16,7 @@ const expand = function(x) {
 <template type="pug">
 div.my-8#genres
   +each('genres as genre')
-    section.px-4.pb-4
+    section.px-4.pb-4(id="{genre}")
       h2.text-left {genre}
       hr.mb-2
       div.text-left

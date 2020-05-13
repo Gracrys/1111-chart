@@ -5,5 +5,5 @@ import { data, genres } from '../data'
 <template type="pug">
   +each('genres as genre')
     li
-      a {genre}
+      a(href="#{genre}") {genre}
 </template>
