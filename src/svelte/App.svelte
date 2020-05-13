@@ -13,6 +13,7 @@ import Cats from './Cats.svelte'
 		main
 			h1.text-2xl.text-left 1111 Essentials Recordings Of Music v2.00 (2020/04/20)
 			Genres
+			Player
 
 </template>
 
