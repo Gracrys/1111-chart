@@ -24,8 +24,9 @@ div.my-8#genres
           article(class="{!open ? 'tagged' : ''}" on:click="{expand}")
               b {album.album}
               p {album.artist}
+              i.subgenre {album.subgenre}
               img(src="{album.cover}")
-              <!-- +if('!!album.youtube') -->
+              +if('!!album.youtube')
                 figure
                   iframe( id="ytplayer" type="text/html" src="{album.youtube}")
 </template>
@@ -43,6 +44,7 @@ div.my-8#genres
       grid-gap: 2rem
       article
         overflow: hidden
+        transition: all 0.6s
         > div
           height: 100%
         img
@@ -51,11 +53,10 @@ div.my-8#genres
           cursor: pointer
         figure
           display: none
-        &.expanded
+        &:hover
+          transform: scale(1.5)
           background-color: hsla(0, 100%, 70%, 0.8)
           img
-            display: none
-          figure 
+          .subgenre
             display: block
-            width: 100%
 </style>
