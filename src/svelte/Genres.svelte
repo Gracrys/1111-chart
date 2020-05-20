@@ -1,25 +1,32 @@
 <script lang="typescript">
 import { data, genres } from '../data'
+import { currentAlbum } from '../store';
 let arr = Object.values(data)
+
+  let player = x => {
+    console.log(x)
+    currentAlbum.set(x)
+  }
+
 </script>
 
-<template type="pug">
-div.my-8#genres
-  +each('genres as genre')
-    section.px-4.pb-4(id="{genre}")
-      h2.text-left {genre}
-      hr.mb-2
-      div.text-left
-        +each('data.rock as album')
-          article
-              b {album.album}
-              p {album.artist}
-              i.subgenre {album.subgenre}
-              img(src="{album.cover}")
-              +if('!!album.youtube')
-                figure
-                  iframe( id="ytplayer" type="text/html" src="{album.youtube}")
-</template>
+<div class="my-8" id="genres">
+  {#each genres as genre}
+    <section class="px-4 pb-4" id={genre}>
+      <h2 class="text-left">{genre}</h2>
+      <div class="text-left">
+        {#each data[genre] as album}
+          <article on:click="{() => player(album)}">
+            <b> {album.album}</b>
+            <p> {album.artist} </p>
+            <i class="subgenre"> {album.subgenre || ""} </i>
+            <img src="{album.cover}" />
+          </article>
+        {/each}
+      </div>
+    </section>
+  {/each}
+</div>
 
 <style type="sass">
   #genres

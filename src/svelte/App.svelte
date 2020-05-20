@@ -1,7 +1,10 @@
 <script >
 import Genres from './Genres.svelte'
 import Cats from './Cats.svelte'
+import Player from './Player.svelte'
+
 </script>
+
 
 <template type="pug">
  	aside
